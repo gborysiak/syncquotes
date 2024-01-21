@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Microsoft.OData.Edm;
 using Microsoft.OData.ModelBuilder;
-using StoreCoinMarket;
+using CoinMarketData;
 using NLog;
 using NLog.Web;
 using Microsoft.IdentityModel.JsonWebTokens;
@@ -16,6 +16,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using System.Net;
 
 // Early init of NLog to allow startup and exception logging, before host is built
 var logger = NLog.LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
@@ -27,13 +28,18 @@ try
 {
     var builder = WebApplication.CreateBuilder(args);
 
+    // Configure forwarded headers
+    builder.Services.Configure<ForwardedHeadersOptions>(options =>
+    {
+        options.KnownProxies.Add(IPAddress.Parse("127.0.0.1"));
+    });
+
     // NLog: Setup NLog for Dependency injection
     builder.Logging.ClearProviders();
     builder.Host.UseNLog();
 
 
     ODataConventionModelBuilder modelBuilder = new ODataConventionModelBuilder();
-    //modelBuilder.EntityType<CoinHistory>();
     modelBuilder.ComplexType<CoinHistory>();
     modelBuilder.EntitySet<Coin>("Coin");
 
@@ -42,11 +48,6 @@ try
             "odata",
             modelBuilder.GetEdmModel()));
 
-
-    // Add services to the container.
-    //builder.Services.AddControllers();
-    // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-    //builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerGen();
 
     builder.Services.AddDbContext<CoinDbContext>(options =>
@@ -61,25 +62,6 @@ try
         );
     });
 
-    /*
-    builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-        .AddJwtBearer(options =>
-        {
-            //var key = new SymmetricSecurityKey(securityService.Key);
-            options.TokenValidationParameters = new TokenValidationParameters
-            {
-                ValidateIssuer = false,
-                ValidateAudience = false,
-                ValidateLifetime = true,
-                ValidateIssuerSigningKey = true,
-                ValidIssuer = builder.Configuration["Jwt:Issuer"],
-                ValidAudience = builder.Configuration["Jwt:Issuer"],
-                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"])),
-                //IssuerSigningKey = key,
-                ClockSkew = TimeSpan.Zero
-            };
-        });
-    */
 
     var app = builder.Build();
 
@@ -106,6 +88,8 @@ try
     app.UseEndpoints(endpoints => endpoints.MapControllers());
 
     //Console.WriteLine("token " + generateJwt(builder.Configuration));
+
+    app.MapGet("/", () => "127.0.0.1");
 
     app.Run();
 

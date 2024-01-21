@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ConsoleApp1\StoreCoinMarket.csproj" />
+    <ProjectReference Include="..\CoinMarketData\CoinMarketData.csproj" />
   </ItemGroup>
 
 </Project>

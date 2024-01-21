@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using StoreCoinMarket;
+using CoinMarketData;
 //using NoobsMuc.Coinmarketcap.Client;
 using Microsoft.Extensions.Configuration;
+
 
 namespace StoreCoinMarket
 {

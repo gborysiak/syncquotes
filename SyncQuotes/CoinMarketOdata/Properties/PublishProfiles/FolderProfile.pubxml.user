@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project>
   <PropertyGroup>
     <_PublishTargetUrl>C:\dev\crypto_currency\publish_web</_PublishTargetUrl>
-    <History>False|2024-01-19T16:15:26.1920559Z;</History>
+    <History>True|2024-01-20T16:18:38.8272057Z;False|2024-01-20T17:18:03.0192656+01:00;True|2024-01-20T16:56:41.3388126+01:00;False|2024-01-20T16:56:27.5203207+01:00;False|2024-01-20T16:56:07.3033007+01:00;True|2024-01-20T16:12:16.8781747+01:00;True|2024-01-20T16:11:37.6533523+01:00;False|2024-01-19T17:15:26.1920559+01:00;</History>
     <LastFailureDetails />
   </PropertyGroup>
 </Project>

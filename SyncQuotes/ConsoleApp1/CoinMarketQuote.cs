@@ -6,6 +6,7 @@ using System.Net;
 using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
+using CoinMarketData;
 
 namespace StoreCoinMarket
 {

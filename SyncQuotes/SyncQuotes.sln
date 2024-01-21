@@ -5,10 +5,12 @@ VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StoreCoinMarket", "ConsoleApp1\StoreCoinMarket.csproj", "{CB0B1839-B05F-4429-861A-1392051F6589}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoinMarketOdata", "CoinMarketOdata\CoinMarketOdata.csproj", "{4324BFA1-DC75-4408-9F9F-E0A5E20B60E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoinMarketOdata", "CoinMarketOdata\CoinMarketOdata.csproj", "{4324BFA1-DC75-4408-9F9F-E0A5E20B60E5}"
 	ProjectSection(ProjectDependencies) = postProject
 		{CB0B1839-B05F-4429-861A-1392051F6589} = {CB0B1839-B05F-4429-861A-1392051F6589}
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoinMarketData", "CoinMarketData\CoinMarketData.csproj", "{F1D06DC4-12CC-431E-B6EC-CDDB788C5BDB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,6 +26,10 @@ Global
 		{4324BFA1-DC75-4408-9F9F-E0A5E20B60E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4324BFA1-DC75-4408-9F9F-E0A5E20B60E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4324BFA1-DC75-4408-9F9F-E0A5E20B60E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1D06DC4-12CC-431E-B6EC-CDDB788C5BDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1D06DC4-12CC-431E-B6EC-CDDB788C5BDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1D06DC4-12CC-431E-B6EC-CDDB788C5BDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1D06DC4-12CC-431E-B6EC-CDDB788C5BDB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -4,8 +4,8 @@ using Microsoft.AspNetCore.OData.Query;
 using Microsoft.AspNetCore.OData.Routing.Controllers;
 using Microsoft.AspNetCore.Razor.Hosting;
 using Microsoft.EntityFrameworkCore;
-using NetTopologySuite.Index.HPRtree;
-using StoreCoinMarket;
+//using NetTopologySuite.Index.HPRtree;
+using CoinMarketData;
 
 namespace CoinMarketOdata.Controllers
 {
