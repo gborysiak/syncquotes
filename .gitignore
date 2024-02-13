@@ -4,3 +4,7 @@
 /SyncQuotes/CoinMarketOdata/obj/*
 /SyncQuotes/ConsoleApp1/bin/*
 /SyncQuotes/ConsoleApp1/obj/*
+/publish_web/*
+/publish/*
+
+/SyncQuotes/*
